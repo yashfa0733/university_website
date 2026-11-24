@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Science Department | ABC University</title>
+  <style>
+    /* Basic styling for the complete website */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #263238;
+      background: #f4f7fb;
+    }
+    header {
+      background: #12345a;
+      color: white;
+      padding: 22px 6%;
+    }
+    header h1 { margin: 0; font-size: 27px; }
+    header p { margin: 4px 0 15px; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    nav button {
+      border: 0;
+      background: #24527d;
+      color: white;
+      padding: 9px 13px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    nav button:hover, nav button.active { background: #f0b429; color: #172b4d; }
+    main {
+      max-width: 1050px;
+      margin: 25px auto;
+      padding: 0 18px;
+    }
+    .page {
+      display: none;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px #00000012;
+    }
+    .page.active { display: block; }
+    h2 { color: #12345a; margin-top: 0; }
+    h3 { color: #24527d; }
+    .hero {
+      background: #e8f1fa;
+      border-left: 5px solid #f0b429;
+      padding: 22px;
+      border-radius: 6px;
+    }
+    .hero img {
+      display: block;
+      width: 100%;
+      max-height: 240px;
+      object-fit: cover;
+      margin-top: 15px;
+      border-radius: 6px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 15px;
+      margin-top: 18px;
+    }
+    .card {
+      border: 1px solid #dce4ed;
+      padding: 15px;
+      border-radius: 7px;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    caption { text-align: left; font-weight: bold; margin-bottom: 8px; }
+    th, td { border: 1px solid #ccd6e0; padding: 10px; text-align: left; }
+    th { background: #e8f1fa; }
+    aside {
+      background: #fff8e5;
+      border-left: 4px solid #f0b429;
+      padding: 12px 16px;
+      margin: 18px 0;
+    }
+    form { max-width: 560px; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #b8c5d3;
+      border-radius: 5px;
+      margin-top: 5px;
+      font: inherit;
+    }
+    .submit-btn {
+      margin-top: 15px;
+      background: #12345a;
+      color: white;
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 18px;
+      cursor: pointer;
+    }
+    .submit-btn:hover { background: #24527d; }
+    .map-box {
+      background: #e8f1fa;
+      padding: 20px;
+      border: 1px dashed #24527d;
+      text-align: center;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 18px;
+      color: white;
+      background: #12345a;
+      margin-top: 30px;
+    }
+    a { color: #145b9a; }
+    @media (max-width: 600px) {
+      header { padding: 18px; }
+      nav button { flex: 1 1 42%; }
+      .page { padding: 17px; }
+      table { font-size: 14px; }
+      th, td { padding: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ABC University</h1>
+    <p>Department of Computer Science</p>
+    <!-- Navigation buttons switch between sections using JavaScript -->
+    <nav aria-label="Main navigation">
+      <button class="active" data-page="home">Home</button>
+      <button data-page="about">About</button>
+      <button data-page="programs">Programs</button>
+      <button data-page="faculty">Faculty</button>
+      <button data-page="courses">Courses</button>
+      <button data-page="admissions">Admissions</button>
+      <button data-page="news">News</button>
+      <button data-page="contact">Contact</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <h2>Welcome to the Computer Science Department</h2>
+        <p>Learn computing, build useful technology and prepare for a successful career.</p>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=80"
+             alt="University students working together on computers">
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Quality Education</h3>
+          <p>Learn programming, databases, networks and modern software development.</p>
+        </article>
+        <article class="card">
+          <h3>Experienced Faculty</h3>
+          <p>Study with teachers who support learning and practical projects.</p>
+        </article>
+        <article class="card">
+          <h3>Career Skills</h3>
+          <p>Build problem-solving, teamwork and technical skills for the future.</p>
+        </article>
+      </div>
+      <aside><strong>Notice:</strong> Admissions are open for the upcoming semester.</aside>
+    </section>
+
+    <section id="about" class="page">
+      <h2>About Our Department</h2>
+      <p>The Department of Computer Science at ABC University provides education in computing and information technology.</p>
+      <p>Our goal is to help students understand computer science concepts and apply them to real-world problems.</p>
+      <h3>Our Mission</h3>
+      <p>To provide quality education, encourage research and develop responsible technology professionals.</p>
+    </section>
+
+    <section id="programs" class="page">
+      <h2>Academic Programs</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>BS Computer Science</h3>
+          <p>Four-year undergraduate program covering programming, databases, networks and software development.</p>
+        </article>
+        <article class="card">
+          <h3>MS Computer Science</h3>
+          <p>Advanced study in computing, research methods and specialized areas of computer science.</p>
+        </article>
+        <article class="card">
+          <h3>Short Courses</h3>
+          <p>Introductory learning in web development, programming and computer applications.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faculty" class="page">
+      <h2>Our Faculty</h2>
+      <table>
+        <caption>Department Faculty</caption>
+        <thead>
+          <tr><th scope="col">Name</th><th scope="col">Designation</th><th scope="col">Specialization</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dr. Sara Khan</td><td>Associate Professor</td><td>Artificial Intelligence</td></tr>
+          <tr><td>Mr. Hamza Ali</td><td>Lecturer</td><td>Web Engineering</td></tr>
+          <tr><td>Ms. Ayesha Noor</td><td>Lecturer</td><td>Database Systems</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="courses" class="page">
+      <h2>Course Catalog</h2>
+      <table>
+        <caption>Sample Computer Science Courses</caption>
+        <thead>
+          <tr><th scope="col">Course Code</th><th scope="col">Course Title</th><th scope="col">Credit Hours</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CS-101</td><td>Introduction to Computing</td><td>3</td></tr>
+          <tr><td>CS-201</td><td>Object Oriented Programming</td><td>4</td></tr>
+          <tr><td>CS-301</td><td>Database Systems</td><td>3</td></tr>
+          <tr><td>CS-305</td><td>Web Technologies</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="admissions" class="page">
+      <h2>Admissions</h2>
+      <p>Students interested in the BS Computer Science program can apply through the university admissions office.</p>
+      <h3>Basic Admission Requirements</h3>
+      <ul>
+        <li>Completed intermediate or equivalent education.</li>
+        <li>Submit the university application form.</li>
+        <li>Provide academic documents and required photographs.</li>
+        <li>Meet the university's merit and admission criteria.</li>
+      </ul>
+      <p>For exact dates and eligibility, contact the admissions office.</p>
+    </section>
+
+    <section id="news" class="page">
+      <h2>Department News</h2>
+      <article class="card">
+        <h3>Web Development Workshop</h3>
+        <p><time datetime="2026-11-20">20 November 2026</time></p>
+        <p>The department will arrange a beginner-friendly workshop about HTML, CSS and JavaScript.</p>
+      </article>
+      <article class="card">
+        <h3>Final Year Project Exhibition</h3>
+        <p><time datetime="2026-12-05">5 December 2026</time></p>
+        <p>Students will present their final year software and research projects.</p>
+      </article>
+      <h3>Department Audio Message</h3>
+      <p>Example multimedia element (audio controls):</p>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> ABC University, Main Campus, Pakistan</p>
+      <p><strong>Email:</strong> csdepartment@example.edu</p>
+      <p><strong>Phone:</strong> +92 300 1234567</p>
+      <h3>Location Map Placeholder</h3>
+      <div class="map-box" role="img" aria-label="Map placeholder for ABC University main campus">
+        University campus map will be displayed here.
+      </div>
+      <h3>Send a Message</h3>
+      <form id="contactForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required minlength="3" placeholder="Enter your name">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="name@example.com">
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Enter subject">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required minlength="10" placeholder="Write your message"></textarea>
+
+        <button class="submit-btn" type="submit">Send Message</button>
+      </form>
+      <p id="formMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> ABC University - Department of Computer Science</p>
+  </footer>
+
+  <script>
+    // Show the selected page and highlight its navigation button.
+    const navButtons = document.querySelectorAll("nav button");
+    const pages = document.querySelectorAll(".page");
+
+    navButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const pageId = button.getAttribute("data-page");
+
+        pages.forEach(function(page) {
+          page.classList.remove("active");
+        });
+
+        navButtons.forEach(function(item) {
+          item.classList.remove("active");
+        });
+
+        document.getElementById(pageId).classList.add("active");
+        button.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    // Display the current year in the footer.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // This is a front-end demo form; it does not send data to a server.
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("formMessage").textContent =
+        "Thank you! Your message has been recorded for this demo.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
